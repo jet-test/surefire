@@ -12,6 +12,6 @@ public class JUnitTest {
 
     @Test
     public void second() {
-        System.err.println("junit 1.2");
+        System.out.println("junit 1.2");
     }
 }

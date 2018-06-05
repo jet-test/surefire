@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 @Test
 public class TestNGWithoutParamsTest {
-    @Test(enabled=false)
+    @Test
     public void first() {
         System.out.println("testng 2.1");
         assert false;

@@ -1,6 +1,7 @@
 package one.trifle.testng;
 
 import org.junit.Ignore;
+import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -22,9 +23,9 @@ public class TestNGTest {
         assert p;
     }
 
-    @Ignore
     @Test(dataProvider = "provider1", groups = "test-method-with-params")
     public void second(boolean p, String data) {
         System.out.println("second:" + data);
+        throw new SkipException("Skipping this exception");
     }
 }

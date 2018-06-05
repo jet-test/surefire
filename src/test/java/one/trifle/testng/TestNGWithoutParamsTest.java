@@ -7,12 +7,10 @@ public class TestNGWithoutParamsTest {
     @Test
     public void first() {
         System.out.println("testng 2.1");
-        assert false;
     }
 
     @Test
     public void second() {
         System.out.println("testng 2.2");
-        assert false;
     }
 }

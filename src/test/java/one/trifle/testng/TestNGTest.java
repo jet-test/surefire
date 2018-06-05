@@ -20,12 +20,18 @@ public class TestNGTest {
     @Test(dataProvider = "provider1", groups = "test-method-with-params")
     public void first(boolean p, String data) {
         System.out.println("first: " + data);
-        assert p;
+        if(!p) {
+            skip();
+        }
     }
 
     @Test(dataProvider = "provider1", groups = "test-method-with-params")
     public void second(boolean p, String data) {
+        skip();
         System.out.println("second:" + data);
+    }
+
+    private static void skip() {
         throw new SkipException("Skipping this exception");
     }
 }

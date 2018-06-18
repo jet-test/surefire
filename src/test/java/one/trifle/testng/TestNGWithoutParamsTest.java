@@ -1,16 +1,16 @@
 package one.trifle.testng;
 
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
-@Test
+//@Test
 public class TestNGWithoutParamsTest {
-    @Test
-    public void first() {
-        System.err.println("testng 2.1");
-    }
-
-    @Test
-    public void second() {
-        System.err.println("testng 2.2");
-    }
+//    @Test
+//    public void first() {
+//        System.err.println("testng 2.1");
+//    }
+//
+//    @Test
+//    public void second() {
+//        System.err.println("testng 2.2");
+//    }
 }

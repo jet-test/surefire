@@ -1,4 +1,4 @@
-package one.trifle.testng;
+package one.trifle.surefire.testng;
 
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
@@ -11,17 +11,15 @@ public class TestNGTest {
     @DataProvider(name = "provider1")
     public Object[][] createData1(Method m) {
         return new Object[][]{
-                new Object[]{Boolean.TRUE, "testng: 1.1"},
-                new Object[]{Boolean.FALSE, "testng: 1.2"}
+                new Object[]{Boolean.TRUE, "one.trifle.surefire.testng: 1.1"},
+                new Object[]{Boolean.FALSE, "one.trifle.surefire.testng: 1.2"}
         };
     }
 
     @Test(dataProvider = "provider1", groups = "test-method-with-params")
     public void first(boolean p, String data) {
         System.out.println("first: " + data);
-        if(!p) {
-            skip();
-        }
+        assert p;
     }
 
     @Test(dataProvider = "provider1", groups = "test-method-with-params")

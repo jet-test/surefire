@@ -1,4 +1,4 @@
-package one.trifle.testng;
+package one.trifle.surefire.testng;
 
 import org.testng.annotations.Test;
 
@@ -6,11 +6,11 @@ import org.testng.annotations.Test;
 public class TestNGWithoutParamsTest {
     @Test
     public void first() {
-        System.err.println("testng 2.1");
+        System.err.println("one.trifle.surefire.testng 2.1");
     }
 
     @Test
     public void second() {
-        System.err.println("testng 2.2");
+        System.err.println("one.trifle.surefire.testng 2.2");
     }
 }

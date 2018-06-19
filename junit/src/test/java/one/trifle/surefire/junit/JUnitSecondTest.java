@@ -1,4 +1,4 @@
-package one.trifle.junit;
+package one.trifle.surefire.junit;
 
 import org.junit.Assert;
 import org.junit.Ignore;

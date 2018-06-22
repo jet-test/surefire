@@ -12,6 +12,7 @@
         <module>testng</module>
         <module>junit</module>
         <module>junit5</module>
+        <module>mixed</module>
     </modules>
 
     <name>surefire</name>

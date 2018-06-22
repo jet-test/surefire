@@ -19,7 +19,6 @@ public class TestNGTest {
     @Test(dataProvider = "provider1", groups = "test-method-with-params")
     public void first(boolean p, String data) {
         System.out.println("first: " + data);
-        assert p;
     }
 
     @Test(dataProvider = "provider1", groups = "test-method-with-params")

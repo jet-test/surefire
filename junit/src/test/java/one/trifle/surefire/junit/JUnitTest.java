@@ -7,7 +7,6 @@ public class JUnitTest {
     @Test
     public void first() {
         System.out.println("junit 1.1");
-        Assert.fail("1.1");
     }
 
     @Test

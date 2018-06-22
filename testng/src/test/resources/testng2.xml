@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="My Second Suite" verbose="1" parallel="true">
+    <test name="Test with params">
+        <classes>
+            <class name="one.trifle.surefire.testng.TestNGTest"/>
+        </classes>
+    </test>
+    <suite-files>
+        <suite-file path="testng-nested.xml" />
+    </suite-files>
+</suite>

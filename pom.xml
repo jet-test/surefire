@@ -11,6 +11,7 @@
     <modules>
         <module>testng</module>
         <module>junit</module>
+        <module>junit5</module>
     </modules>
 
     <name>surefire</name>
@@ -54,7 +55,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>

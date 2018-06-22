@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="My Suite Nested" verbose="1">
+    <test name="Test without params">
+        <classes>
+            <class name="one.trifle.surefire.testng.TestNGWithoutParamsTest"/>
+        </classes>
+    </test>
+</suite>

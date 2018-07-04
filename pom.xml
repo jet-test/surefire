@@ -4,6 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <prerequisites>
+        <maven>3.3.3</maven>
+    </prerequisites>
+
     <groupId>one.trifle</groupId>
     <artifactId>surefire</artifactId>
     <packaging>pom</packaging>
@@ -25,12 +29,17 @@
         <project.package>one.trifle</project.package>
         <project.package.path>one/trifle</project.package.path>
 
-        <java.version>1.6</java.version>
+        <java.version>10</java.version>
 
         <groovy.version>2.4.12</groovy.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.eclipse.sisu</groupId>
+            <artifactId>org.eclipse.sisu.inject</artifactId>
+            <version>0.0.0.M5</version>
+        </dependency>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>

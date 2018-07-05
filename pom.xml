@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <prerequisites>
-        <maven>3.0.5</maven>
+        <maven>2.2.1</maven>
     </prerequisites>
 
     <groupId>one.trifle</groupId>

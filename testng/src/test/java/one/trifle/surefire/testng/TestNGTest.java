@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
+import static org.testng.Assert.assertTrue;
+
 @Test
 public class TestNGTest {
     @DataProvider(name = "provider1")
@@ -19,6 +21,7 @@ public class TestNGTest {
     @Test(dataProvider = "provider1", groups = "test-method-with-params")
     public void first(boolean p, String data) {
         System.out.println("first: " + data);
+        assertTrue(p);
     }
 
     @Test(dataProvider = "provider1", groups = "test-method-with-params")

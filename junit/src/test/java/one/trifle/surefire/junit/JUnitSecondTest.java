@@ -8,7 +8,6 @@ public class JUnitSecondTest {
     public void first() {
         System.out.println("junit 2.1");
         Assert.fail("123");
-        buil fail
     }
 
     @Test

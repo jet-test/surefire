@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+    </parent>
+
     <groupId>one.trifle</groupId>
     <artifactId>surefire</artifactId>
     <packaging>pom</packaging>
@@ -16,6 +22,59 @@
     </modules>
 
     <name>surefire</name>
+
+    <description>my test example</description>
+    <url>https://github.com/jet-test/surefire</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <organization>
+        <name>trifle</name>
+        <url>https://www.trifle.one/</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>owner</id>
+            <name>Aleksey Dobrynin</name>
+            <email>lexa@trifle.one</email>
+            <timezone>UTC+7</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/jet-test/surefire.git</connection>
+        <developerConnection>scm:git:https://github.com/jet-test/surefire.git</developerConnection>
+        <url>https://github.com/jet-test/surefire.git</url>
+    </scm>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/jet-test/surefire/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>travis-ci</system>
+        <url>https://travis-ci.org/madlexa/lurry</url>
+    </ciManagement>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>surefire-release</id>
+            <name>surefire-release</name>
+            <url>https://github.com/jet-test/surefire/issues</url>
+        </repository>
+    </repositories>
 
     <properties>
         <!--SYSTEM-->

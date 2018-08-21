@@ -8,6 +8,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.4.RELEASE</version>
+        <relativePath>.</relativePath>
     </parent>
 
     <groupId>one.trifle</groupId>
@@ -20,6 +21,8 @@
         <module>junit5</module>
         <module>mixed</module>
     </modules>
+
+    <inceptionYear>2018</inceptionYear>
 
     <name>surefire</name>
 
@@ -44,6 +47,15 @@
             <timezone>UTC+7</timezone>
         </developer>
     </developers>
+    <contributors>
+        <contributor>
+            <id>owner</id>
+            <name>Aleksey Dobrynin</name>
+            <email>lexa@trifle.one</email>
+            <timezone>UTC+7</timezone>
+        </contributor>
+    </contributors>
+
     <scm>
         <connection>scm:git:https://github.com/jet-test/surefire.git</connection>
         <developerConnection>scm:git:https://github.com/jet-test/surefire.git</developerConnection>
@@ -253,4 +265,30 @@
         </plugins>
     </reporting>
 
+    <prerequisites>
+        <maven>3.5.4</maven>
+    </prerequisites>
+
+    <profiles>
+        <profile>
+            <id>test1</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.1</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>test2</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.0</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 </project>

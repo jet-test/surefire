@@ -49,6 +49,7 @@
     </developers>
     <contributors>
         <contributor>
+            <id>test</id>
             <name>Aleksey Dobrynin</name>
             <email>lexa@trifle.one</email>
             <timezone>UTC+7</timezone>
@@ -263,10 +264,6 @@
             </plugin>
         </plugins>
     </reporting>
-
-    <prerequisites>
-        <maven>3.5.4</maven>
-    </prerequisites>
 
     <profiles>
         <profile>

@@ -4,12 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.4.RELEASE</version>
-        <relativePath>.</relativePath>
-    </parent>
+    <prerequisites>
+        <maven>3.3.3</maven>
+    </prerequisites>
 
     <groupId>one.trifle</groupId>
     <artifactId>surefire</artifactId>
@@ -22,71 +19,7 @@
         <module>mixed</module>
     </modules>
 
-    <inceptionYear>2018</inceptionYear>
-
     <name>surefire</name>
-
-    <description>my test example</description>
-    <url>https://github.com/jet-test/surefire</url>
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <organization>
-        <name>trifle</name>
-        <url>https://www.trifle.one/</url>
-    </organization>
-    <developers>
-        <developer>
-            <id>owner</id>
-            <name>Aleksey Dobrynin</name>
-            <email>lexa@trifle.one</email>
-            <timezone>UTC+7</timezone>
-        </developer>
-    </developers>
-    <contributors>
-        <contributor>
-            <id>test</id>
-            <name>Aleksey Dobrynin</name>
-            <email>lexa@trifle.one</email>
-            <timezone>UTC+7</timezone>
-        </contributor>
-    </contributors>
-
-    <scm>
-        <connection>scm:git:https://github.com/jet-test/surefire.git</connection>
-        <developerConnection>scm:git:https://github.com/jet-test/surefire.git</developerConnection>
-        <url>https://github.com/jet-test/surefire.git</url>
-    </scm>
-
-    <issueManagement>
-        <system>github</system>
-        <url>https://github.com/jet-test/surefire/issues</url>
-    </issueManagement>
-    <ciManagement>
-        <system>travis-ci</system>
-        <url>https://travis-ci.org/madlexa/lurry</url>
-    </ciManagement>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>surefire-release</id>
-            <name>surefire-release</name>
-            <url>https://github.com/jet-test/surefire/issues</url>
-        </repository>
-    </repositories>
 
     <properties>
         <!--SYSTEM-->
@@ -119,57 +52,9 @@
         </dependency>
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>apache.snapshots</id>
-            <url>http://repository.apache.org/snapshots/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
-
-        <resources>
-            <resource>
-                <directory>src\main\resources</directory>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>src\test\resources</directory>
-            </testResource>
-        </testResources>
-
-        <directory>target</directory>
-
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ftp</artifactId>
-                <version>2.10</version>
-            </extension>
-        </extensions>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>1.8</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
 
         <plugins>
             <plugin>
@@ -180,111 +65,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
-    <reporting>
-        <outputDirectory>target\site</outputDirectory>
-        <plugins>
-            <plugin>
-                <artifactId>maven-changelog-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <type>range</type>
-                    <range>365</range>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-changes-plugin</artifactId>
-                <version>2.12.1</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>changes-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                    <reportSet>
-                        <id>aggregate</id>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.22.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.5</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>dependency-updates-report</report>
-                            <report>plugin-updates-report</report>
-                            <report>property-updates-report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.1</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>report</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
-
-    <profiles>
-        <profile>
-            <id>test1</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.1</version>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>test2</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.0</version>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
 </project>

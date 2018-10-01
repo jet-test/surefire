@@ -16,7 +16,7 @@
 .gradle
 
 # Package Files #
-*.jar
+build
 *.war
 *.nar
 *.ear

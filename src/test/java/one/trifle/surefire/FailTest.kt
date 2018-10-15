@@ -8,4 +8,8 @@ class FailTest {
     fun big() {
         Assert.fail((0..500_000).joinToString(""))
     }
+    @Test
+    fun small() {
+        Assert.fail("oops")
+    }
 }

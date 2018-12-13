@@ -17,6 +17,11 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib"
+    testCompile 'junit:junit:4.12'
+}
+
 println """
 ----------------------------
 |        MODULE #2         |

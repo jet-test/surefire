@@ -17,10 +17,6 @@ buildscript {
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.1.0'

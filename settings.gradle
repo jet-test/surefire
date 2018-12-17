@@ -1,3 +1,4 @@
-include 'sub-module1'
-include 'sub-module2'
+include ':sub-module1',
+        ':sub-module2',
+        ':sub-sub-module1'
 

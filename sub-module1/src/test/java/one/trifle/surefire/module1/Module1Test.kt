@@ -1,6 +1,6 @@
 package one.trifle.surefire.module1
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class Module1Test {
     @Test

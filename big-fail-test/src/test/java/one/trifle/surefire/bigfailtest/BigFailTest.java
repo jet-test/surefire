@@ -10,6 +10,7 @@ public class BigFailTest {
     @Test
     public void test() {
         String result = IntStream.range(1, 1_000_000).mapToObj(String::valueOf).collect(Collectors.joining());
-        Assert.assertEquals("expected" + result, "actual" + result);
+        Assert.assertEquals("expected" + result, "actual" + new StringBuilder(result).reverse().toString()
+        );
     }
 }

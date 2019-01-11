@@ -53,14 +53,14 @@ object Test : BuildType({
 
     steps {
         maven {
-            goals = "clean release:prepare release:perform -DdryRun=true"
-            runnerArgs = "-Dmaven.test.failure.ignore=true"
-            mavenVersion = auto()
-            userSettingsSelection = "settings.xml"
-            userSettingsPath = "/usr/local/Cellar/maven/3.5.4/libexec/conf/settings.xml"
+            goals = "clean release:prepare release:perform"
+            runnerArgs = "-DdryRun=true"
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.5.2%"
+            }
+            jdkHome = "%env.JDK_18%"
         }
     }
-
 })
 
 object HttpsGithubComJetTestSurefireGitRefsHeadsMaster : GitVcsRoot({

@@ -45,7 +45,7 @@ object Test : BuildType({
     """.trimIndent()
 
     params {
-        param("teamcity.maven.dontReadPomBeforeBuild", "true")
+        param("teamcity.maven.dontReadPomBeforeBuild", "false")
     }
 
     vcs {
@@ -54,22 +54,14 @@ object Test : BuildType({
 
     steps {
         maven {
-            goals = "clean test"
+            goals = "clean release:prepare release:perform -DdryRun=true"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             mavenVersion = auto()
             userSettingsSelection = "settings.xml"
             userSettingsPath = "/usr/local/Cellar/maven/3.5.4/libexec/conf/settings.xml"
-            useOwnLocalRepo = true
-            isIncremental = true
         }
     }
 
-    features {
-        xmlReport {
-            rules = "**/*.xml"
-            param("xmlReportParsing.reportType", "goLang")
-        }
-    }
 })
 
 object HttpsGithubComJetTestSurefireGitRefsHeadsMaster : GitVcsRoot({

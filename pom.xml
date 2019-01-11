@@ -21,6 +21,10 @@
 
     <name>surefire</name>
 
+    <scm>
+        <connection>scm:git:file://tmp/.git</connection>
+    </scm>
+
     <properties>
         <!--SYSTEM-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

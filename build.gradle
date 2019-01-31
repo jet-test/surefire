@@ -28,16 +28,13 @@ task printer {
     println(new File(System.getenv("TEAMCITY_BUILD_PROPERTIES_FILE")).getText('UTF-8'))
 
     println("=============================================")
+    println("teamcity.configuration.properties.file")
+    println(new File(project.properties["teamcity.configuration.properties.file"]).getText('UTF-8'))
+
+    println("=============================================")
     println("project.properties")
     project.properties.entrySet().each { println("${it.key} => ${it.value}") }
 
     println("=============================================")
-    println("System.properties")
-    System.properties.entrySet().each { println("${it.key} => ${it.value}") }
-    
-    println("=============================================")
-
-    println("System.getenv")
-    System.getenv().entrySet().each { println("${it.key} => ${it.value}") }
 
 }

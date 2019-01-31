@@ -21,3 +21,5 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
     testCompile 'junit:junit:4.12'
 }
+
+project.properties.entrySet().each{ println("${it.key} => ${it.value}") }

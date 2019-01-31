@@ -36,4 +36,8 @@ task printer {
     System.properties.entrySet().each { println("${it.key} => ${it.value}") }
     
     println("=============================================")
+
+    println("System.getenv")
+    System.getenv().entrySet().each { println("${it.key} => ${it.value}") }
+
 }

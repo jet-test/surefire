@@ -22,4 +22,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-project.properties.entrySet().each{ println("${it.key} => ${it.value}") }
+task printer {
+    project.properties.entrySet().each { println("${it.key} => ${it.value}") }
+}

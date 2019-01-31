@@ -24,17 +24,23 @@ dependencies {
 
 task printer {
     println("=============================================")
-    println("TEAMCITY_BUILD_PROPERTIES_FILE = " + System.getenv("TEAMCITY_BUILD_PROPERTIES_FILE"))
-    println(new File(System.getenv("TEAMCITY_BUILD_PROPERTIES_FILE")).getText('UTF-8'))
+
+    File propsFile = project.file(project.properties["teamcity.configuration.properties.file"]);
+    Properties props = new Properties();
+    InputStream inStream = null;
+    try {
+        inStream = new FileInputStream(propsFile);
+        props.load(inStream);
+    } catch (IOException ignore) {
+    } finally {
+        if (null != inStream) {
+            try {
+                inStream.close();
+            } catch (IOException ignore) {}
+        }
+    }
+
+    props.entrySet().each { println("${it.key} => ${it.value}") }
 
     println("=============================================")
-    println("teamcity.configuration.properties.file")
-    println(new File(project.properties["teamcity.configuration.properties.file"]).getText('UTF-8'))
-
-    println("=============================================")
-    println("project.properties")
-    project.properties.entrySet().each { println("${it.key} => ${it.value}") }
-
-    println("=============================================")
-
 }

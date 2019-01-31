@@ -23,5 +23,8 @@ dependencies {
 }
 
 task printer {
+    println("TEAMCITY_BUILD_PROPERTIES_FILE = " + System.getenv("TEAMCITY_BUILD_PROPERTIES_FILE"))
+    println(new File(System.getenv("TEAMCITY_BUILD_PROPERTIES_FILE")).getText('UTF-8'))
+
     project.properties.entrySet().each { println("${it.key} => ${it.value}") }
 }

@@ -24,6 +24,11 @@ dependencies {
 
 task printer {
     println("=============================================")
+    project.properties.entrySet().each {
+        println("${it.key} => ${it.value}")
+    }
+
+    println("=============================================")
 
     File propsFile = project.file(project.properties["teamcity.configuration.properties.file"]);
     Properties props = new Properties();

@@ -1,4 +1,4 @@
-package one.trifle.surefire
+package one.trifle
 
 import org.junit.Assert
 import org.junit.Test

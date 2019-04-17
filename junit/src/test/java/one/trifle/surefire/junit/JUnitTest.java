@@ -13,4 +13,9 @@ public class JUnitTest {
     public void second() {
         System.out.println("junit 1.2");
     }
+
+    @Test
+    public void property() {
+        System.out.println(System.getProperty("java.io.tmpdir"));
+    }
 }

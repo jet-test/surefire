@@ -55,7 +55,7 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.5.2%"
+                path = "%teamcity.tool.maven3_5%"
             }
             param("useOwnLocalRepo", "true")
             jdkHome = "%env.JDK_18%"
@@ -64,7 +64,7 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.5.2%"
+                path = "%teamcity.tool.maven3_5%"
             }
             param("useOwnLocalRepo", "false")
             jdkHome = "%env.JDK_18%"
@@ -73,7 +73,7 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.5.2%"
+                path = "%teamcity.tool.maven3_5%"
             }
             param("useOwnLocalRepo", "")
             jdkHome = "%env.JDK_18%"
@@ -82,7 +82,7 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = custom {
-                path = "%teamcity.tool.maven.3.5.2%"
+                path = "%teamcity.tool.maven3_5%"
             }
             jdkHome = "%env.JDK_18%"
         }

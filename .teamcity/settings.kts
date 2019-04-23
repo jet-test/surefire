@@ -53,8 +53,34 @@ object Test : BuildType({
 
     steps {
         maven {
-            goals = "clean release:prepare release:perform"
-            runnerArgs = "-DdryRun=true"
+            goals = "clean test"
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.5.2%"
+            }
+            param("useOwnLocalRepo", "true")
+            jdkHome = "%env.JDK_18%"
+        }
+
+        maven {
+            goals = "clean test"
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.5.2%"
+            }
+            param("useOwnLocalRepo", "false")
+            jdkHome = "%env.JDK_18%"
+        }
+
+        maven {
+            goals = "clean test"
+            mavenVersion = custom {
+                path = "%teamcity.tool.maven.3.5.2%"
+            }
+            param("useOwnLocalRepo", "")
+            jdkHome = "%env.JDK_18%"
+        }
+
+        maven {
+            goals = "clean test"
             mavenVersion = custom {
                 path = "%teamcity.tool.maven.3.5.2%"
             }

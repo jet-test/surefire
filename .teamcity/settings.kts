@@ -24,7 +24,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2018.1"
+version = "2018.2"
 
 project {
 
@@ -54,36 +54,25 @@ object Test : BuildType({
     steps {
         maven {
             goals = "clean test"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven3_5%"
-            }
-            param("useOwnLocalRepo", "true")
+            mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.BuildConfiguration
             jdkHome = "%env.JDK_18%"
         }
-
         maven {
             goals = "clean test"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven3_5%"
-            }
-            param("useOwnLocalRepo", "false")
+            mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.Default
             jdkHome = "%env.JDK_18%"
         }
-
         maven {
             goals = "clean test"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven3_5%"
-            }
-            param("useOwnLocalRepo", "")
+            mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.Agent
             jdkHome = "%env.JDK_18%"
         }
-
         maven {
             goals = "clean test"
-            mavenVersion = custom {
-                path = "%teamcity.tool.maven3_5%"
-            }
+            mavenVersion = bundled_3_5()
             jdkHome = "%env.JDK_18%"
         }
     }

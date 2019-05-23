@@ -14,9 +14,11 @@
 *.iml
 .idea
 .gradle
+out
 
 # Package Files #
 build
+target
 *.war
 *.nar
 *.ear

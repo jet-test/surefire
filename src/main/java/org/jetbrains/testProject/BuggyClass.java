@@ -16,10 +16,21 @@
 
 package org.jetbrains.testProject;
 
+import java.util.Date;
+
 public class BuggyClass {
+  private Date field = null;
   public Boolean main() {
     String a = null;
     a = a.trim();
     return ((String)null).hashCode() == 1 && ((String)null).hashCode() == 1;
+  }
+
+  public Date getField() {
+    return field;
+  }
+
+  public void setField(Date field) {
+    this.field = field;
   }
 }

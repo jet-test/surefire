@@ -32,10 +32,13 @@
                 <configuration>
                     <xmlOutput>true</xmlOutput>
                     <xmlOutputDirectory>target/test</xmlOutputDirectory>
+
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <xmlOutput>true</xmlOutput>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 </project>

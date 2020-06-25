@@ -15,7 +15,7 @@
     </repository>
   </repositories>
 
-  <name>snapshot-maven</name>
+  <name>maven snapshot test</name>
 
   <dependencies>
     <dependency>

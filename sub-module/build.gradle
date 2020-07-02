@@ -1,0 +1,21 @@
+apply plugin: "java"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
+}
+
+test {
+    def testsTmpDir = file("${buildDir}/tmp/tests-tmp")
+    systemProperty("java.io.tmpdir", testsTmpDir)
+//    systemProperty("java.security.manager", "java.lang.SecurityManager")
+//    systemProperty("java.security.policy", "/Users/lexa/projects/surefire/sub-module/src/test/resources/tests.policy")
+    systemProperty("tempDir", testsTmpDir)
+    doFirst {
+        testsTmpDir.mkdirs()
+    }
+}
+

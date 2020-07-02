@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'one.trifle'
+include 'sub-module'
+

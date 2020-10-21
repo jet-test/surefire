@@ -2,7 +2,7 @@ package one.trifle
 
 import org.junit.jupiter.api.Test
 import java.io.File
-import kotlin.test.assertTrue
+import org.junit.jupiter.api.Assertions.assertTrue
 
 class RetryTests {
     @Test

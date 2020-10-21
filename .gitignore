@@ -23,4 +23,8 @@
 hs_err_pid*
 
 # Idea
-.idea
+.idea/
+
+# Gradle
+build/
+.gradle/

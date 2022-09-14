@@ -56,19 +56,21 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.BuildConfiguration
             jdkHome = "%env.JDK_18%"
         }
         maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.Default
             jdkHome = "%env.JDK_18%"
         }
         maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.Agent
             jdkHome = "%env.JDK_18%"
-        }
-        maven {
+        }        maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
             jdkHome = "%env.JDK_18%"

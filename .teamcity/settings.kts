@@ -37,6 +37,7 @@ object SplitTest : BuildType({
 
     params {
         param("teamcity.build.serviceMessages.logOriginal", "true")
+        param("test", "true")
     }
 
     vcs {

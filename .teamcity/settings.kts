@@ -51,9 +51,8 @@ object SplitTest : BuildType({
     }
 
     features {
-        feature {
-            type = "splitTests"
-            param("numberOfParts", "2")
+        parallelTests {
+            numberOfBatches = 2
         }
     }
 })

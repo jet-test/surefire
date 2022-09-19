@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <name>Gradle_Surefire Config DSL Script</name>
-  <groupId>Gradle_Surefire</groupId>
-  <artifactId>Gradle_Surefire_dsl</artifactId>
+  <name>Maven_Surefire Config DSL Script</name>
+  <groupId>Maven_Surefire</groupId>
+  <artifactId>Maven_Surefire_dsl</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <parent>
@@ -77,13 +77,13 @@
   <dependencies>
     <dependency>
       <groupId>org.jetbrains.teamcity</groupId>
-      <artifactId>configs-dsl-kotlin</artifactId>
+      <artifactId>configs-dsl-kotlin-latest</artifactId>
       <version>${teamcity.dsl.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.jetbrains.teamcity</groupId>
-      <artifactId>configs-dsl-kotlin-plugins</artifactId>
+      <artifactId>configs-dsl-kotlin-plugins-latest</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>pom</type>
       <scope>compile</scope>

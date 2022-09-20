@@ -4,7 +4,6 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.MavenBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
-
 /*
 The settings script is an entry point for defining a TeamCity
 project hierarchy. The script should contain a single call to the
@@ -32,7 +31,6 @@ version = "2022.04"
 project {
 
     vcsRoot(HttpsGithubComJetTestSurefireGitRefsHeadsMaster)
-
     buildType(Test)
 }
 
@@ -70,16 +68,16 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
-            localRepoScope = MavenBuildStep.RepositoryScope.AGENT
             jdkHome = "%env.JDK_18%"
         }
         maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
+            localRepoScope = MavenBuildStep.RepositoryScope.MAVEN_DEFAULT
             jdkHome = "%env.JDK_18%"
         }
     }
-    
+
     features {
         parallelTests {
             numberOfBatches = 2
@@ -90,4 +88,5 @@ object Test : BuildType({
 object HttpsGithubComJetTestSurefireGitRefsHeadsMaster : GitVcsRoot({
     name = "https://github.com/jet-test/surefire.git#refs/heads/master"
     url = "https://github.com/jet-test/surefire.git"
+    param("useAlternates", "true")
 })

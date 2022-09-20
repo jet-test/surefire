@@ -30,7 +30,7 @@ version = "2022.04"
 
 project {
 
-    vcsRoot(HttpsGithubComJetTestSurefireGitRefsHeadsMaster)
+    vcsRoot(JetTestSurefireGit)
     buildType(Test)
 }
 
@@ -49,7 +49,7 @@ object Test : BuildType({
     }
 
     vcs {
-        root(HttpsGithubComJetTestSurefireGitRefsHeadsMaster)
+        root(JetTestSurefireGit)
     }
 
     steps {
@@ -66,10 +66,9 @@ object Test : BuildType({
     }
 })
 
-object HttpsGithubComJetTestSurefireGitRefsHeadsMaster : GitVcsRoot({
+object JetTestSurefireGit : GitVcsRoot({
     name = "surefire.git"
     url = "https://github.com/jet-test/surefire.git"
-    param("useAlternates", "true")
     branchSpec = "+:refs/heads/*"
     branch = "refs/heads/master"
 })

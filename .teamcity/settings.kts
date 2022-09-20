@@ -56,21 +56,6 @@ object Test : BuildType({
         maven {
             goals = "clean test"
             mavenVersion = bundled_3_5()
-            localRepoScope = MavenBuildStep.RepositoryScope.BUILD_CONFIGURATION
-        }
-        maven {
-            goals = "clean test"
-            mavenVersion = bundled_3_5()
-            localRepoScope = MavenBuildStep.RepositoryScope.MAVEN_DEFAULT
-        }
-        maven {
-            goals = "clean test"
-            mavenVersion = bundled_3_5()
-        }
-        maven {
-            goals = "clean test"
-            mavenVersion = bundled_3_5()
-            localRepoScope = MavenBuildStep.RepositoryScope.MAVEN_DEFAULT
         }
     }
 

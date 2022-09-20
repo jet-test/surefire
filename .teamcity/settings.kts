@@ -67,7 +67,7 @@ object Test : BuildType({
 })
 
 object HttpsGithubComJetTestSurefireGitRefsHeadsMaster : GitVcsRoot({
-    name = "https://github.com/jet-test/surefire.git#refs/heads/master"
+    name = "surefire.git"
     url = "https://github.com/jet-test/surefire.git"
     param("useAlternates", "true")
 })

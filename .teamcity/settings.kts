@@ -54,7 +54,7 @@ object Test : BuildType({
 
     steps {
         maven {
-            goals = "clean test"
+            goals = "clean package"
             mavenVersion = bundled_3_5()
         }
     }

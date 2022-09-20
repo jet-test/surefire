@@ -29,7 +29,6 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2022.04"
 
 project {
-
     vcsRoot(HttpsGithubComJetTestSurefireGitRefsHeadsMaster)
     buildType(Test)
 }
@@ -46,6 +45,7 @@ object Test : BuildType({
 
     params {
         param("teamcity.maven.dontReadPomBeforeBuild", "false")
+        param("branch_name", "change_config")
     }
 
     vcs {

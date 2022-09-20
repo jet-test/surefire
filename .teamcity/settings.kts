@@ -71,4 +71,5 @@ object HttpsGithubComJetTestSurefireGitRefsHeadsMaster : GitVcsRoot({
     url = "https://github.com/jet-test/surefire.git"
     param("useAlternates", "true")
     branchSpec = "+:refs/heads/*"
+    branch = "refs/heads/master"
 })

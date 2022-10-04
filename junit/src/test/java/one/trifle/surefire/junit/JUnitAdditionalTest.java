@@ -18,4 +18,10 @@ public class JUnitAdditionalTest {
     public void property() {
         System.out.println(System.getProperty("java.io.tmpdir"));
     }
+    
+    @Test
+    public void additional() {
+        System.out.println("none");
+    }
+
 }

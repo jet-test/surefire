@@ -58,11 +58,11 @@ object Test : BuildType({
         }
     }
 
-    features {
-        parallelTests {
-            numberOfBatches = 2
-        }
-    }
+//     features {
+//         parallelTests {
+//             numberOfBatches = 2
+//         }
+//     }
 })
 
 object JetTestSurefireGit : GitVcsRoot({

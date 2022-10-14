@@ -45,7 +45,7 @@ object Test : BuildType({
     """.trimIndent()
 
     params {
-        param("teamcity.maven.dontReadPomBeforeBuild", "false")
+        param("teamcity.maven.dontReadPomBeforeBuild", "true")
     }
 
     vcs {

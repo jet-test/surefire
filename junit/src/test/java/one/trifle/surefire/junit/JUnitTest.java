@@ -19,4 +19,8 @@ public class JUnitTest {
         System.out.println(System.getProperty("java.io.tmpdir"));
         Assert.fail("fail");
     }
+    
+    @Test
+    public void newTest() {
+    }
 }

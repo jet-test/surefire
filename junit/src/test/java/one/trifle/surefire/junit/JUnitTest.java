@@ -22,5 +22,6 @@ public class JUnitTest {
     
     @Test
     public void newTest() {
+        System.out.println("newTest");
     }
 }

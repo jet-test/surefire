@@ -1,0 +1,26 @@
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = "one.trifle"
+            artifactId = "trigger-utils"
+            version = "0.1-SNAPSHOT"
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = spaceUrl
+            credentials {
+                username = spaceUsername
+                password = spacePassword
+            }
+        }
+    }
+}

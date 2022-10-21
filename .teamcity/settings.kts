@@ -20,9 +20,9 @@ object Deploy : BuildType({
     }
 
     params {
-        text("spaceUrl", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
-        text("spaceUsername", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
-        text("spacePassword", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+        text("system.spaceUrl", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+        text("system.spaceUsername", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+        text("system.spacePassword", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
     }
 
     steps {

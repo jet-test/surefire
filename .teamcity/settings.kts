@@ -1,6 +1,9 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.MavenBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
+import jetbrains.buildServer.configs.kotlin.buildSteps.gradle
+import jetbrains.buildServer.configs.kotlin.triggers.mavenArtifact
+import jetbrains.buildServer.configs.kotlin.triggers.mavenSnapshot
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 project {

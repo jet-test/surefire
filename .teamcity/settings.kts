@@ -42,14 +42,14 @@ object Trigger : BuildType({
     }
 
     params {
-        text("spaceUrl", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+        text("system.spaceUrl", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
     }
 
     steps {
         maven {
             name = "test"
             goals = "clean test"
-            runnerArgs = "-Dspace.url=%spaceUrl%"
+            runnerArgs = "-Dspace.url=%system.spaceUrl%"
         }
     }
 

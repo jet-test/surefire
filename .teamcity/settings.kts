@@ -19,6 +19,12 @@ object Deploy : BuildType({
         root(MavenTriggerVcs)
     }
 
+    params {
+        text("spaceUrl", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+        text("spaceUsername", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+        text("spacePassword", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+    }
+
     steps {
         gradle {
             name = "publish"
@@ -35,11 +41,15 @@ object Trigger : BuildType({
         root(MavenTriggerVcs)
     }
 
+    params {
+        text("spaceUrl", "", display = ParameterDisplay.PROMPT, allowEmpty = true)
+    }
+
     steps {
         maven {
             name = "test"
             goals = "clean test"
-            runnerArgs = "-Drevision=%foo.version% -Dnexus.url=%space.url%"
+            runnerArgs = "-Dspace.url=%spaceUrl%"
         }
     }
 

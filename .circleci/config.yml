@@ -7,18 +7,16 @@ executors:
     macos:
       xcode: 11.4
 orbs:
-  maven: circleci/maven@x.y
+  maven: circleci/maven@<< parameters.maven >>
 jobs:
   test:
     parameters:
-      java:
-        type: string
       os:
         type: executor
     executor: << parameters.os >>
     steps:
       - checkout
-      - run: mvn test -Djava=<< parameters.java >>
+      - run: mvn test
 workflows:
   all-tests:
     jobs:
@@ -26,4 +24,4 @@ workflows:
           matrix:
             parameters:
               os: [linux, macos]
-              java: [1.8, 17]
+              maven: [3.6.3, 3.8.6]

@@ -3,7 +3,7 @@ name: Semaphore CI Demo
 agent:
   machine:
     type: e1-standard-2
-    os_image: alpine
+    os_image: ubuntu1804
 blocks:
   - name: 'build-job'
     task:

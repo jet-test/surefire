@@ -2,11 +2,20 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  example_matrix:
+  build-job:
     strategy:
       matrix:
-        java: ["18", "19"]
+        java: ["1.8", "19"]
         os: ["3.16", "3,14"]
     runs-on: alpine:${{matrix.os}}
     steps:
       - run: echo ${{matrix.os}} ${{matrix.java}}
+  test-job:
+    strategy:
+      matrix:
+        java: [ "1.8", "19" ]
+        os: [ "windows", "linux", "mac" ]
+    runs-on: alpine:latest
+    steps:
+      - run: echo ${{matrix.os}} ${{matrix.java}}
+    needs: build-job

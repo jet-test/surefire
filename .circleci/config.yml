@@ -7,7 +7,7 @@ executors:
     macos:
       xcode: 11.4
 orbs:
-  maven: circleci/maven@<< parameters.maven >>
+  maven: circleci/maven@3.6.3
 jobs:
   test:
     parameters:
@@ -24,4 +24,3 @@ workflows:
           matrix:
             parameters:
               os: [linux, macos]
-              maven: [3.6.3, 3.8.6]

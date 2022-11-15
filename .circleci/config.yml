@@ -18,7 +18,7 @@ jobs:
     executor: << parameters.os >>
     steps:
       - checkout
-      - run: mvn test -Djava=<< parameters.java >>
+      - run: mvn test -Dparam=<< parameters.java >>
 workflows:
   all-tests:
     jobs:

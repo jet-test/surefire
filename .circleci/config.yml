@@ -17,7 +17,7 @@ jobs:
         type: string
     executor: << parameters.os >>
     steps:
-      - run: mvn test -Dparam=<< parameters.java >>
+      - run: mvn test -Dmy.param=<< parameters.java >>
 workflows:
   all-tests:
     jobs:

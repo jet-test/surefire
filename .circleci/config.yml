@@ -6,8 +6,6 @@ executors:
   linux-stable:
     docker:
       - image: cimg/base:stable
-orbs:
-  maven: circleci/maven@1.4.0
 jobs:
   test:
     parameters:
@@ -17,7 +15,7 @@ jobs:
         type: string
     executor: << parameters.os >>
     steps:
-      - run: mvn test -Dmy.param=<< parameters.java >>
+      - run: echo << parameters.java >> << parameters.os >>
 workflows:
   all-tests:
     jobs:

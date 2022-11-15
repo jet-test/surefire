@@ -13,10 +13,12 @@ jobs:
     parameters:
       os:
         type: executor
+      java:
+        type: string
     executor: << parameters.os >>
     steps:
       - checkout
-      - run: mvn test
+      - run: mvn test -Djava=<< parameters.java >>
 workflows:
   all-tests:
     jobs:
@@ -24,3 +26,4 @@ workflows:
           matrix:
             parameters:
               os: [linux, macos]
+              java: [1.8, 17]

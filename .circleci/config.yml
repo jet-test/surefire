@@ -1,0 +1,29 @@
+version: 2.1
+executors:
+  linux:
+    docker:
+      - image: cimg/base:2020.01
+  macos:
+    macos:
+      xcode: 11.4
+orbs:
+  maven: circleci/maven@x.y
+jobs:
+  test:
+    parameters:
+      java:
+        type: string
+      os:
+        type: executor
+    executor: << parameters.os >>
+    steps:
+      - checkout
+      - run: mvn test -Djava=<< parameters.java >>
+workflows:
+  all-tests:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              os: [linux, macos]
+              java: [1.8, 17]

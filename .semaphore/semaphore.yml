@@ -6,6 +6,7 @@ agent:
     os_image: ubuntu1804
 blocks:
   - name: 'build-job'
+    dependencies: [ ]
     task:
       jobs:
         - name: 'echo'

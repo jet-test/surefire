@@ -1,11 +1,11 @@
 version: 2.1
 executors:
-  linux:
+  linux-2020_01:
     docker:
       - image: cimg/base:2020.01
-  macos:
-    macos:
-      xcode: 11.4
+  linux-stable:
+    docker:
+      - image: cimg/base:stable
 orbs:
   maven: circleci/maven@1.4.0
 jobs:
@@ -25,5 +25,5 @@ workflows:
       - test:
           matrix:
             parameters:
-              os: [linux, macos]
+              os: [linux-2020_01, linux-stable]
               java: ["1.8", "17"]

@@ -1,0 +1,30 @@
+version: v1.0
+name: Semaphore CI Demo
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: alpine
+blocks:
+  - name: 'build-job'
+    task:
+      jobs:
+        - name: 'echo'
+          matrix:
+            - env_var: JAVA
+              values: [ "1.8", "19" ]
+            - env_var: OS
+              values: [ "3.16", "3.14" ]
+          commands:
+            - echo "$OS $JAVA"
+  - name: 'test-job'
+    dependencies: [ "build-job" ]
+    task:
+      jobs:
+        - name: 'echo'
+          matrix:
+            - env_var: JAVA
+              values: [ "1.8", "19" ]
+            - env_var: OS
+              values: [ "windows", "linux", "mac" ]
+          commands:
+            - echo "$OS $JAVA"

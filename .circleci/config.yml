@@ -26,4 +26,4 @@ workflows:
           matrix:
             parameters:
               os: [linux, macos]
-              java: [1.8, 17]
+              java: ["1.8", "17"]

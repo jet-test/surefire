@@ -29,6 +29,6 @@ public class TestNGTest {
     }
 
     private static void skip() {
-        throw new SkipException("Skipping this exception.");
+        throw new SkipException("Skipping this exception");
     }
 }

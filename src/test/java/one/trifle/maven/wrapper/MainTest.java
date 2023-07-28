@@ -12,4 +12,9 @@ public class MainTest {
         final Path temp = Files.createTempFile("", ".tmp");
         System.out.println(temp);
     }
+
+    @Test
+    public void system() throws IOException {
+        System.out.println(System.getProperty("param"));
+    }
 }

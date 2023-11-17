@@ -7,6 +7,7 @@
     <prerequisites>
         <maven>3.3.3</maven>
     </prerequisites>
+         
 
     <groupId>one.trifle</groupId>
     <artifactId>surefire</artifactId>
